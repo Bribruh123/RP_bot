@@ -149,7 +149,8 @@ def run():
 
 
                 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(scope=scope))
-                sp.playlist_add_items('12PfopLD2DGo1UWTtQ69RX', [songs[0]['id']])
+                response = sp.playlist_add_items('12PfopLD2DGo1UWTtQ69RX', [songs[0]['id']])
+                print(response)
 
         f.close()
 
