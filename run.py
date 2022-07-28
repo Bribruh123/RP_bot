@@ -130,7 +130,7 @@ def run():
         with open('list_not_found.txt') as f:
             if title not in f.read():
                 f_add = open("list_not_found.txt", "a")
-                f_add.write({'name ': title, 'artist ': artist, 'playtime': playtime})
+                f_add.write(json.dumps({'name ': title, 'artist ': artist, 'playtime': playtime}))
                 f_add.close()
         f.close()
 
