@@ -65,7 +65,7 @@ def run():
         'client_id': client_id,
         'response_type': 'code',
         'redirect_uri': 'https://open.spotify.com/collection/playlists',
-        'scope': 'playlist-modify-private',
+        'scope': 'playlist-modify-private'
     })
     print(auth_code.text)
     auth_url = 'https://accounts.spotify.com/api/token'
@@ -94,7 +94,7 @@ def run():
     headers = {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer {}'.format(access_token),
+        'Authorization': 'Bearer {}'.format(access_token)
     }
 
     params = {
@@ -102,7 +102,7 @@ def run():
         'type': 'track',
         'market': 'US',
         'limit': '50',
-        'offset': '0',
+        'offset': '0'
     }
 
     response = requests.get('https://api.spotify.com/v1/search', params=params, headers=headers)
